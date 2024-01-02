@@ -16,16 +16,20 @@ else{
 return newCaseNumber;
 
 }
+function updateCaseTotalPrice(){
+    const caseTotalPrice = newCaseNumber*59;
+    const caseTotalElement = document.getElementById('case-total');
+    caseTotalElement.innerText = caseTotalPrice; 
+}
 
 document.getElementById('btn-case-plus').addEventListener('click' , function(){
  newCaseNumber=  updateCaseNumber(true);
-
- const caseTotalPrice = newCaseNumber*59;
- const caseTotalElement = document.getElementById('case-total');
- caseTotalElement.innerText = caseTotalPrice; 
+ updateCaseTotalPrice(newCaseNumber);
 
 })
 document.getElementById('btn-case-minus').addEventListener('click', function(){
-updateCaseNumber(false);
+newCaseNumber = updateCaseNumber(false);
+
+updateCaseTotalPrice(newCaseNumber);
 
 })
