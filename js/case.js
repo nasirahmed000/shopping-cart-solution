@@ -26,10 +26,16 @@ document.getElementById('btn-case-plus').addEventListener('click' , function(){
  newCaseNumber=  updateCaseNumber(true);
  updateCaseTotalPrice(newCaseNumber);
 
+ calculateSubTotal();
+
+
 })
 document.getElementById('btn-case-minus').addEventListener('click', function(){
 newCaseNumber = updateCaseNumber(false);
 
 updateCaseTotalPrice(newCaseNumber);
+
+calculateSubTotal();
+
 
 })
